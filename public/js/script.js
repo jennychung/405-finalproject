@@ -1,4 +1,4 @@
-<script>
+
 
 function timeBased() {
   var time = new Date().getHours();
@@ -10,5 +10,3 @@ function timeBased() {
   }
   document.getElementById("timeBased").innerHTML = greeting;
 }
-
-</script>
