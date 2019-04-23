@@ -1,0 +1,246 @@
+
+.nav-quiz {
+  padding: 10;
+  border-style: solid;
+  border-color: #97BFF7;
+  color: #97BFF7;
+  margin-right: 20px;
+}
+
+nav {
+	width: 100%;
+	margin: 0 0 1em 0;
+	padding: 0;
+  font-family: 'Lato', sans-serif;
+
+}
+nav a {
+    color: #535353;
+}
+
+.pageTitle {
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #151515;
+  padding-bottom: 2rem;
+}
+
+body{
+  margin: 6em;
+  min-height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-top: 6em;
+}
+
+/* MY DAY PAGE */
+
+#timeBased {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #535353;
+  display: flex;
+}
+
+.daybody {
+	margin: 6em;
+	min-height: 100vh;
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	/* flex-wrap: wrap; */
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-top: 6em;
+}
+
+.cardGroup {
+  flex-wrap: wrap;
+  display: flex;"
+}
+
+.daybody .card {
+  position: relative;
+  width: 256px;
+  height: 400px;
+  /* margin-left: 32px; */
+  margin-bottom: 32px;
+  margin-right: 3rem;
+  margin-top: 2em;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.05), 2px 4px 32px 0 rgba(0, 0, 0, 0.05), 0 0 64px 0 rgba(0, 0, 0, 0.05);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: transform 300ms ease;
+
+}
+.daybody .card .image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 70px;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  transition: bottom 300ms ease;
+}
+.daybody .card .content {
+  position: absolute;
+  z-index: 10;
+  padding: 1rem;
+  height: 100%;
+  background: #F5F5F5;
+  transform: translateY(314px);
+  transition: transform 300ms ease;
+  padding-left: 1rem;
+}
+.daybody .card .content .brand {
+  font-size: 0.8rem;
+  font-weight: 700;
+  /* color: #FFBD71; */
+  color: #FFBD71;
+  text-transform: uppercase;
+}
+.daybody .card .content .name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* font-family: 'Playfair Display', serif; */
+  color: #535353;
+
+}
+
+.daybody .card .content .description {
+  opacity: 0;
+  transition: opacity 500ms ease 100ms;
+  width: 256px;
+}
+
+.daybody .card .content .description .category {
+  font-size: 1rem;
+  /* font-style: italic; */
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  padding-top:1rem;
+}
+
+.daybody .card .content .description .tags{
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+	flex-wrap: wrap;
+  padding-top:0.5rem;
+}
+
+.daybody .card .content .description .tags .tag-style{
+  background-color: #C9D4B8;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+  margin-right: 0.6rem;
+  border-radius: 5px;
+}
+
+.daybody .card:hover {
+  transform: translateY(-16px);
+}
+.daybody .card:hover .image {
+  bottom: 280px;
+}
+.daybody .card:hover .content {
+  transform: translateY(104px);
+}
+.daybody .card:hover .content .description {
+  opacity: 1;
+}
+
+
+/* TOGGLE: MY DAY */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFBD71;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  /* background-color: #FFBD71; */
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3B80E1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3B80E1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#tip1{
+  width: 100%;
+  background-color: #AABD9D;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 6rem;
+    margin-bottom: 6rem;
+  /* width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
