@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>@yield('title')</title>
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900|Playfair+Display:400,700,700i" rel="stylesheet">
 
@@ -17,7 +17,7 @@
   <li> <a class="nav-link" href="/quiz"> <i> Take a Quiz </i> </a> </li>
   <li> <a class="nav-link" href="/day"> My Day </a>  </li>
 
-  <img src="{{ url('/images/moongloss.svg') }}" height="48" style="display: block; margin-left: auto; margin-right: auto;">
+  <img src="{{ asset('/images/moongloss.svg') }}" height="48" style="display: block; margin-left: auto; margin-right: auto;">
 
   <li style="float:right"> <a class="nav-link" href="/explore">Explore</a>  </li>
   <li style="float:right"> <a class="nav-link"  href="/skin">Profile</a>  </li>

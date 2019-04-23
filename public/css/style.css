@@ -153,6 +153,10 @@ body{
   border-radius: 5px;
 }
 
+.daybody .card .content .description .tags .tag-style:hover {
+  background-color: #92B45A;
+}
+
 .daybody .card:hover {
   transform: translateY(-16px);
 }
@@ -235,8 +239,8 @@ input:checked + .slider:before {
 #tip1{
   width: 100%;
   background-color: #AABD9D;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
   margin-top: 6rem;
     margin-bottom: 6rem;
   /* width: 80%;

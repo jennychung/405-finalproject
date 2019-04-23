@@ -87,7 +87,7 @@
 
 <div class= "cardGroup">
   <div id= "tip1">
-    <img src="{{ url('/images/tip1.jpg') }}" height="200" style="display: block; margin-left: auto; margin-right: auto;">
+    <img src="{{ asset('/images/tip1.jpg') }}" height="200" style="display: block; margin-left: auto; margin-right: auto;">
   </div>
 </div>
 
