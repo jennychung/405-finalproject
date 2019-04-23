@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>@yield('title')</title>
 
-  <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900|Playfair+Display:400,700,700i" rel="stylesheet">
 
@@ -30,7 +30,7 @@
 
 @yield('main')
 </div>
-<script type="text/javascript" src="{{ url('/js/script.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
