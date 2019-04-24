@@ -9,12 +9,12 @@
 <div class= "searchbody">
 
 <div class="subheadPink"> Search </div>
-<input type="text" placeholder="Keywords">
-<button type="submit">Submit</button>
+<input type="text" placeholder="Keywords" class="col">
+<button type="submit" class="col col-lg-2">Submit</button>
 
 
 <div class="filterGroup">
-<div class="filter">
+<div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Categories </div>
   <select size="5">
     <option value="all" selected >All</option>
@@ -24,7 +24,7 @@
   </select>
 </div>
 
-<div class="filter">
+<div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Brands </div>
   <select size="5">
     <option value="all" selected >All</option>
@@ -34,7 +34,7 @@
   </select>
 </div>
 
-<div class="filter">
+<div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Tags </div>
   <select size="5">
     <option value="all" selected >All</option>
@@ -45,8 +45,10 @@
 </div>
 </div>
 
-<div class="cardGroup ">
-<div class="card exploreCard">
+
+<div class="cardGroup">
+
+<div class="card exploreCard col-md">
   <div class="image" style="background-image: url('/images/kale.jpg')"></div>
   <div class="content">
     <div class="brand">
@@ -68,7 +70,7 @@
   </div>
 </div>
 
-<div class="card exploreCard">
+<div class="card exploreCard col-md">
   <div class="image" style="background-image: url('/images/kale.jpg')"></div>
   <div class="content">
     <div class="brand">
@@ -90,7 +92,7 @@
   </div>
 </div>
 
-<div class="card exploreCard">
+<div class="card exploreCard col-md">
   <div class="image" style="background-image: url('/images/kale.jpg')"></div>
   <div class="content">
     <div class="brand">

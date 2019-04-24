@@ -325,6 +325,7 @@ input:checked + .slider:before {
   margin-bottom: 32px;
   margin-right: 3rem;
   margin-top: 2em;
+  padding-left: 0;
   cursor: pointer;
   overflow: hidden;
   font-family: 'Lato', sans-serif;
@@ -337,7 +338,7 @@ input:checked + .slider:before {
 
 .explore .filter select {
   overflow:auto;
-  width: 200;
+  width: 100%;
   padding: 10px;
   border: none;
 }
@@ -350,10 +351,71 @@ input:checked + .slider:before {
 }
 
 .daybody .exploreCard {
-  width: 256px;
-  height: 400px;
-  margin-right: 2rem;
+  /* width: 256px;
+  height: 400px; */
 }
+
+.daybody .exploreCard .content{
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  float: left;
+}
+
+.profileImage{
+  background-position: center;
+  background-size: cover;
+  /* height: width; */
+  width: 100%;
+  padding-top: 30%;
+  margin: 0.5rem;
+}
+
+.profileText {
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  padding-top: 20px;
+  font-size: 1.5rem;
+  color: #535353;
+}
+
+.dynamicProfileText{
+  /* font-size: 1rem; */
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #92B45A;
+}
+
+/* .profileRowHeight{
+  height: 100px;
+} */
+
+.profileButton {
+  padding: 6px;
+  margin-top: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  background-color: #92B45A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.imageDate{
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-align: right;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  letter-spacing: 1px;
+}
+
+
 
 /* RESPONSIVE */
 
