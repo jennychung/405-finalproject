@@ -1,4 +1,4 @@
-<body class="daybody">
+<body class="daybody" onload="timeBased()">
 
 @extends('layout')
 @section('title', 'My Day')
@@ -7,7 +7,8 @@
 
 
 <div class="pageTitle"> My Day </div>
-<div id="timeBased" style=" display: inline-block;"> Today – <i> a.m </i>
+<div style=" display: inline-block;">
+  <p id="timeBased"> Today – <i> a.m </i> </p>
 </div>
 
 <div style="float: right; display: inline-block; margin-top:0.2rem;">
