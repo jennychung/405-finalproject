@@ -289,6 +289,13 @@ input:checked + .slider:before {
   letter-spacing: 1px;
 }
 
+.subheadGreen{
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #92B45A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 
 .explore button {
@@ -415,8 +422,87 @@ input:checked + .slider:before {
   letter-spacing: 1px;
 }
 
+/* PRODUCT */
 
+.productBody{
+width: 80%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+margin-top: 4rem;
+}
 
+.productBody .productImage {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 30rem;
+  position: absolute;
+  /* position: relative; */
+  z-index: -100;
+  background-position: center;
+  background-size: cover;
+  margin-top: 2rem;
+  left: 35%;
+  right: 35%;
+}
+
+.productBody .tags{
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+	flex-wrap: wrap;
+  padding-top:0.5rem;
+}
+
+.productBody .tags .tag-style{
+  background-color: #C9D4B8;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  margin-right: 0.6rem;
+  border-radius: 5px;
+}
+
+.productBody .tags .tag-style:hover {
+  background-color: #92B45A;
+}
+
+#underImage {
+  width: 43%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  margin-top: 23rem;
+}
+
+.productBody .bodyText{
+  text-align: left;
+  color: #535353;
+}
+
+.productBody .table tbody tr td{
+  text-align: left;
+  font-size: 1.2rem;
+    color: #535353;
+    padding-top: 10px;
+}
+
+.productBody .table tr td{
+  border-top: none;
+  padding-left:0;
+}
+
+.productBody .table tbody tr td i{
+  padding-left: 20px;
+  color: #92B45A;
+  text-align: right;
+}
 /* RESPONSIVE */
 
 @media screen and (max-width: 1000px) {

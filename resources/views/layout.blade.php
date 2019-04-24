@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900|Playfair+Display:400,700,700i" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
 <body style="background-color: #F5F5F5;" class="daybody">
@@ -18,6 +18,7 @@
 
   <li> <a class="nav-link" href="/quiz"> <i> Take a Quiz </i> </a> </li>
   <li> <a class="nav-link" href="/day"> My Day </a>  </li>
+    <li> <a class="nav-link" href="/day" style="color:transparent;"> Enter </a>  </li>
 
   <a href="/day"  class="logo" style="display: block; margin-left: auto; margin-right: auto;">
     <img src="{{ asset('/images/moongloss.svg') }}" height="36"></a>
