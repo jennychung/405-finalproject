@@ -3,10 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ExploreController extends Controller
 {
-  public function index() {
-    return view('explore');
-  }
+    public function index(Request $request)
+    {
+        $query = DB::table('products');
+        // $products = $query->get();
+        // return view('explore');
+
+        if ($request->query('search')) {
+            $query->where('productName', 'LIKE', '%' .$request->query('search'). '%');
+        }
+
+
+        // Search based on category
+        if ($request->has('category')) {
+            $query->where('productTypeSimple', $request->query('category'));
+        }
+
+        // Search based on brand
+        if ($request->has('brand')) {
+            $query->where('brand', $request->query('brand'));
+        }
+
+        // Search based on ingredient
+        if ($request->has('ingredient')) {
+            $query->where('ingredients', $request->query('ingredient'));
+        }
+
+
+        $products = $query->get();
+        $categories = $query->get();
+        $brand = $query->get();
+        $ingredients = $query->get();
+
+
+        return view('explore', [
+        'products' => $products,
+        'categories' => $categories,
+        'brand' => $brand,
+        'ingredient' => $ingredients,
+        'search' => $request->query('search')
+    ]);
+    }
+
+    // public function filter() {
+  //   return view('explore');
+  // }
 }
