@@ -19,7 +19,14 @@ and
 .
 
 
-<button type="" class="profileButton">Upload New Photo</button>
+<form enctype="multipart/form-data" method="post" action="/skin">
+    @csrf
+    <div class="form-group">
+        <input data-preview="#preview" name="input_img" type="file" id="imageInput">
+        <!-- <img class="col-sm-6" id="preview"  src=""> -->
+        <button type="" class="profileButton">Upload New Photo</button>
+    </div>
+</form>
 
 </div>
 <div class="col-1"> </div>
@@ -30,35 +37,8 @@ and
      <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
        <p class="imageDate"> 3/20/19 </p>
      </div>
-   <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-        <p class="imageDate"> 3/20/19 </p>
-     </div>
-     <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-        <p class="imageDate"> 3/20/19 </p>
-     </div>
    </div>
-   <div class="row profileRowHeight">
-      <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-        <p class="imageDate"> 3/20/19 </p>
-      </div>
-    <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-         <p class="imageDate"> 3/20/19 </p>
-      </div>
-      <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-         <p class="imageDate"> 3/20/19 </p>
-      </div>
-    </div>
-    <div class="row profileRowHeight">
-       <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-         <p class="imageDate"> 3/20/19 </p>
-       </div>
-     <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-          <p class="imageDate"> 3/20/19 </p>
-       </div>
-       <div class="col profileImage" style="background-image: url(https://source.unsplash.com/random/)">
-          <p class="imageDate"> 3/20/19 </p>
-       </div>
-     </div>
+
 </div>
 </div>
 

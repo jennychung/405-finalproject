@@ -16,6 +16,9 @@ Route::get('/explore', 'ExploreController@index');
 
 
 Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@login');
+Route::get('/logout', 'LoginController@logout');
 // Route::get('/product', 'ProductController@index');
 Route::get('/quiz', 'QuizController@index');
 Route::get('/skin', 'ProfileController@index');
+Route::post('/skin', 'ProfileController@fileUpload');
