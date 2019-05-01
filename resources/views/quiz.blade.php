@@ -4,11 +4,10 @@
 
 @section('main')
 
-<form action="/day" method="post" >
+<form  method="POST" >
           @csrf
 <div class="row  justify-content-center container" >
-
-
+  <!-- <input type="password" type="hidden" autofocus="true" > -->
 <div class="questionBody child">
 <div class="form-group col">
   <label for="name" class="questions">
@@ -17,7 +16,7 @@
   <div class="formSubtext"> Choose as many as needed. </div>
 <div class="row justify-content-center">
         <label for="question-1-answers-A" class="formSelect col-3"> Acne
-         <input type="checkbox" name="question-1-answers" id="question-1-answers-A" class="custom-checkbox-input" value="A"/>
+         <input  autofocus="true" type="checkbox" name="question-1-answers" id="question-1-answers-A" class="custom-checkbox-input" value="A"/>
          <span class="custom-checkbox-text"></span>
          </label>
 
@@ -169,7 +168,7 @@
 <div class="textfield col" style="background-color: #F5F5F5;">
   <div class="row justify-content-center">
       <label for="email" class="questions" style="margin-top: 5vh; font-size: 1.5rem; color: #535353;" >Email</label>
-      <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+      <input type="email" autofocus="false" id="email" name="email" class="form-control" placeholder="Email">
     </div>
   </div>
 

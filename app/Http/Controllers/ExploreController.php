@@ -10,40 +10,32 @@ class ExploreController extends Controller
     public function index(Request $request)
     {
         $query = DB::table('products');
-        // $products = $query->get();
-        // return view('explore');
 
+         $categories = $query->get();
+         $brand = $query->get();
 
-
-        // $filters = ['productTypeSimple', 'brand'];
-        // foreach ($filters as $filter) {
-        //     if (!empty($request->$filter)) {
-        //         $query->where($filter, '=', $request->$filter);
-        //     }
-        // }
-        // // Search based on category
-         if ($request->has('category')) {
-             $query->where('productTypeSimple', '=', $request->category);
+         if(($request->category)){
+            $query->where('productTypeSimple', '=', $request->category);
          }
 
         // Search based on brand
-        if ($request->has('brand')) {
+        // if ($request->has('brand')) {
+            if (($request->brand)) {
             $query->where('brand', '=', $request->brand);
         }
 
-        if ($request->query('search')) {
+
+        if ($request->query('search') != '') {
             $query->where('productName', 'LIKE', '%' .$request->query('search'). '%');
+        } else {
+          $query->get();
         }
 
-        // // Search based on ingredient
-        // if ($request->has('ingredient')) {
-        //     $query->where('ingredients', $request->query('ingredient'));
-        // }
 
 
 
-        $categories = $query->get();
-        $brand = $query->get();
+        // $categories = $query->get();
+        // $brand = $query->get();
         $products = $query->simplePaginate(18);
         // $ingredients = $query->get();
         $imageLink = $query->get();
@@ -53,14 +45,36 @@ class ExploreController extends Controller
         'imageLink' => $imageLink,
         'categories' => $categories,
         'brand' => $brand,
-        // 'ingredient' => $ingredients,
         'search' => $request->query('search')
-        // 'categoryFilter' => $request->has('category'),
-        // 'brandFilter' => $request->has('brand')
     ]);
     }
 
-    // public function filter() {
-  //   return view('explore');
-  // }
+    public function product($productId = null) {
+
+      $query = DB::table('products')->where('productId',$productId);
+
+      if($productId) {
+        $products = DB::table('products')
+        ->where('productId',$productId)
+        ->first();
+        }else{
+          $products=[];
+        }
+
+      $categories = $query->get();
+      $brand = $query->get();
+      $products = $query->get();
+      $imageLink = $query->get();
+      $ingredients = $query->get();
+
+      return view('product', [
+      'products' => $products,
+      'imageLink' => $imageLink,
+      'categories' => $categories,
+      'ingredients' => $ingredients,
+      'brand' => $brand
+  ]);
+
+  }
+
 }

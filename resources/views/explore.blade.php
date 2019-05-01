@@ -25,7 +25,7 @@
   <div class="subheadGrey" style="padding-bottom: 10px;"> Categories </div>
   <select size="5" name="category">
 
-    <option value="all" selected >All</option>
+    <option value="all"  >All</option>
     @foreach($categories->unique('productTypeSimple') as $category)
     <option value="{{$category->productTypeSimple}}">{{$category->productTypeSimple}}</option>
       @endforeach
@@ -35,7 +35,7 @@
 <div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Brands </div>
   <select size="5" name="brand">
-    <option value="all" selected >All</option>
+    <option value="all" >All</option>
       @foreach($brand->unique('brand') as $brand)
     <option value="{{$brand->brand}}">{{$brand->brand}}</option>
           @endforeach
@@ -60,6 +60,7 @@
 
 <div class="cardGroup">
   @foreach($chunk as $product)
+  <a href="/product/{{$product->productId}}">
 <div class="card exploreCard col-md">
   <div class="image" style="background-image: url({{$product->imageLink}})"></div>
 
@@ -87,6 +88,7 @@
   </div>
 
 </div>
+</a>
   @endforeach
 
 </div>

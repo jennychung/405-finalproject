@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\User;
+use Hash;
+use Auth;
 
 class QuizController extends Controller
 {
@@ -17,6 +21,6 @@ public function signup(){
     $user->save();
 
     Auth::login($user);
-    return redirect('/profile');
+    return redirect('/');
 }
 }
