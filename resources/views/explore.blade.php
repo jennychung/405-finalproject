@@ -11,17 +11,19 @@
 <div class="subheadPink"> Search </div>
 
 <!-- index is from controller @index -->
-<form action="index.php" method="get">
+<form  method="get">
           @csrf
 <input type="text" placeholder="Keywords" class="col" name="search" value="{{$search}}">
 <button type="submit" class="col col-lg-2"> Submit </button>
-</form>
 
 
 <div class="filterGroup">
+
+
+
 <div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Categories </div>
-  <select size="5">
+  <select size="5" name="category">
 
     <option value="all" selected >All</option>
     @foreach($categories->unique('productTypeSimple') as $category)
@@ -32,7 +34,7 @@
 
 <div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Brands </div>
-  <select size="5">
+  <select size="5" name="brand">
     <option value="all" selected >All</option>
       @foreach($brand->unique('brand') as $brand)
     <option value="{{$brand->brand}}">{{$brand->brand}}</option>
@@ -40,7 +42,8 @@
   </select>
 </div>
 
-<div class="filter col">
+
+<!-- <div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Tags </div>
   <select size="5">
     <option value="all" selected >All</option>
@@ -48,8 +51,10 @@
     <option value="toner">Vegan</option>
     <option value="wash">Cruelty Free</option>
   </select>
+</div> -->
 </div>
-</div>
+<!-- <button type="submit" class="col col-lg-2"> Submit </button> -->
+</form>
 
 @forelse($products->chunk(3) as $chunk)
 

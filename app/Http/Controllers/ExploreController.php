@@ -13,41 +13,50 @@ class ExploreController extends Controller
         // $products = $query->get();
         // return view('explore');
 
+
+
+        // $filters = ['productTypeSimple', 'brand'];
+        // foreach ($filters as $filter) {
+        //     if (!empty($request->$filter)) {
+        //         $query->where($filter, '=', $request->$filter);
+        //     }
+        // }
+        // // Search based on category
+         if ($request->has('category')) {
+             $query->where('productTypeSimple', '=', $request->category);
+         }
+
+        // Search based on brand
+        if ($request->has('brand')) {
+            $query->where('brand', '=', $request->brand);
+        }
+
         if ($request->query('search')) {
             $query->where('productName', 'LIKE', '%' .$request->query('search'). '%');
         }
 
-
-        // Search based on category
-        if ($request->has('category')) {
-            $query->where('productTypeSimple', $request->query('category'));
-        }
-
-        // Search based on brand
-        if ($request->has('brand')) {
-            $query->where('brand', $request->query('brand'));
-        }
-
-        // Search based on ingredient
-        if ($request->has('ingredient')) {
-            $query->where('ingredients', $request->query('ingredient'));
-        }
+        // // Search based on ingredient
+        // if ($request->has('ingredient')) {
+        //     $query->where('ingredients', $request->query('ingredient'));
+        // }
 
 
-        $products = $query->simplePaginate(18);
+
         $categories = $query->get();
         $brand = $query->get();
-        $ingredients = $query->get();
+        $products = $query->simplePaginate(18);
+        // $ingredients = $query->get();
         $imageLink = $query->get();
-
 
         return view('explore', [
         'products' => $products,
         'imageLink' => $imageLink,
         'categories' => $categories,
         'brand' => $brand,
-        'ingredient' => $ingredients,
+        // 'ingredient' => $ingredients,
         'search' => $request->query('search')
+        // 'categoryFilter' => $request->has('category'),
+        // 'brandFilter' => $request->has('brand')
     ]);
     }
 
