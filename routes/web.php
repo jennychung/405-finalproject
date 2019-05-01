@@ -20,5 +20,6 @@ Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 // Route::get('/product', 'ProductController@index');
 Route::get('/quiz', 'QuizController@index');
+Route::post('/quiz', 'QuizController@signup');
 Route::get('/skin', 'ProfileController@index');
 Route::post('/skin', 'ProfileController@fileUpload');

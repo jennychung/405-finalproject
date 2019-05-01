@@ -56,13 +56,13 @@
 <div class="cardGroup">
   @foreach($chunk as $product)
 <div class="card exploreCard col-md">
-  <div class="image" style="background-image: url('/images/kale.jpg')"></div>
-
+  <div class="image" style="background-image: url({{$product->imageLink}})"></div>
 
   <div class="content">
     <div class="brand">
       <!-- Krave Beauty  -->
       {{$product->brand}}
+      <!-- {{$product->imageLink}} -->
     </div>
     <div class="name">
       <!-- Kale-Lalu-yAHA -->
@@ -83,55 +83,13 @@
 
 </div>
   @endforeach
-<!--
-<div class="card exploreCard col-md">
-  <div class="image" style="background-image: url('/images/kale.jpg')"></div>
-  <div class="content">
-    <div class="brand">
-      Krave Beauty
-    </div>
-    <div class="name">
-      Kale-Lalu-yAHA
-    </div>
 
-    <div class="description">
-      <div class="category">
-        Toner
-      </div>
-      <div class="tags">
-        <div class="tag-style"> Paraben Free </div>
-        <div class="tag-style"> Vegan </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card exploreCard col-md">
-  <div class="image" style="background-image: url('/images/kale.jpg')"></div>
-  <div class="content">
-    <div class="brand">
-      Krave Beauty
-    </div>
-    <div class="name">
-      Kale-Lalu-yAHA
-    </div>
-
-    <div class="description">
-      <div class="category">
-        Toner
-      </div>
-      <div class="tags">
-        <div class="tag-style"> Paraben Free </div>
-        <div class="tag-style"> Vegan </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 </div>
 
 @empty
         <div> No products found </div>
 @endforelse
+{{ $products->links() }}
 </div>
 @endsection
 </body>

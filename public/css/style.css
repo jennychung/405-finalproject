@@ -680,6 +680,21 @@ margin-top: 4rem;
     font-family: 'Lato', sans-serif;
 }
 
+.quizbody .textfield{
+  padding: 6px;
+  /* width: 100px; */
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  margin-top: 1rem;
+  margin: 0.5rem;
+  color: #535353;
+  font-size: 1rem;
+    cursor: pointer;
+}
+
 
 /* RESPONSIVE */
 

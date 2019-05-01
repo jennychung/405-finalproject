@@ -34,14 +34,16 @@ class ExploreController extends Controller
         }
 
 
-        $products = $query->get();
+        $products = $query->simplePaginate(18);
         $categories = $query->get();
         $brand = $query->get();
         $ingredients = $query->get();
+        $imageLink = $query->get();
 
 
         return view('explore', [
         'products' => $products,
+        'imageLink' => $imageLink,
         'categories' => $categories,
         'brand' => $brand,
         'ingredient' => $ingredients,
