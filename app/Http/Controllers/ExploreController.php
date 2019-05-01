@@ -14,22 +14,40 @@ class ExploreController extends Controller
          $categories = $query->get();
          $brand = $query->get();
 
-         if(($request->category)){
+         if(($request->query('category') == 'all') || !($request->category)){
+           $query->get();
+           // $query->where('productTypeSimple', '=', $request->category);
+         } else {
+           // $query->get();
             $query->where('productTypeSimple', '=', $request->category);
          }
 
         // Search based on brand
         // if ($request->has('brand')) {
-            if (($request->brand)) {
+            //if (($request->brand)) {
+
+
+                if (($request->query('brand')  == 'all') || !($request->brand)){
+                  // $query->where('brand', '=', $request->brand);
+                    $query->get();
+          }
+          else  {
+            // $query->get();
             $query->where('brand', '=', $request->brand);
-        }
+          }
+
+
+        //}
+        // else {
+        //   $query->get();
+        // }
 
 
         if ($request->query('search') != '') {
-            $query->where('productName', 'LIKE', '%' .$request->query('search'). '%');
-        } else {
-          $query->get();
-        }
+           $query->where('productName', 'LIKE', '%' .$request->query('search'). '%');
+       } else {
+         $query->get();
+       }
 
 
 
