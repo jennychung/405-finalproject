@@ -22,7 +22,11 @@
                         <hr>
                         @endforeach
                         @else
-                            No favourite items found :(
+                            No favorite items found.
+<a href="/explore">
+                            Add your favorite products.
+</a>
+
                         @endif
   @endif
 @yield('favoritelist')

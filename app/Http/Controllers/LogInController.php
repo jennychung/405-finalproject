@@ -20,7 +20,9 @@ class LogInController extends Controller
   if ($loginWasSuccessful){
     return redirect('/day');
   } else {
-    return redirect('/login');
+    return Redirect::back()->withErrors(['msg', 'The Message']);
+    //return redirect('/login');
+
   }
 }
 

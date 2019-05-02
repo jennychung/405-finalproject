@@ -4,6 +4,9 @@
 
 @section('main')
 
+
+
+
 <form  method="POST" >
           @csrf
 
@@ -11,8 +14,9 @@
   <div class ="questions" style="margin-top: 0"> Sign Up to View Results </div>
 <div class="textfield col" style="background-color: #F5F5F5;">
   <div class="row justify-content-center">
-      <label for="email" class="questions" style="margin-top: 5vh; font-size: 1.5rem; color: #535353;" >Email</label>
+      <label for="email" class="questions" style="margin-top: 5vh; font-size: 1.5rem; color: #535353;" value="{{ old('email') }}">Email</label>
       <input type="email" autofocus="false" id="email" name="email" class="form-control" placeholder="Email">
+      <small class="text-danger">{{$errors->first('email')}} </small>
     </div>
   </div>
 
@@ -29,6 +33,7 @@
 
 
 </form>
+
 
 @endsection
 </body>

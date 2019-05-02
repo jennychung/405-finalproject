@@ -3,6 +3,7 @@
 
 @section('main')
 
+
 <div class="login">
 <div class="row">
     <div class="col-1"> </div>
@@ -15,7 +16,8 @@
         @csrf
   <div class="form-group">
 <div class="subheadPink"> Email </div>
-<input type="email" id="email" name="email" placeholder="Email" class="col">
+<input type="email" id="email" name="email" placeholder="Email" class="col" value="{{ old('email') }}">
+<small class="text-danger">{{$errors->first('email')}} </small>
 </div>
 <p style="margin-top: 10px;"> </p>
 
