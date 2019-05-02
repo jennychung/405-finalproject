@@ -74,7 +74,7 @@ else {
 }
 // otherwise, insert playlist into the database
 DB::table('products')->insert([
-  'id' =>
+  // 'id' =>
   'brand' => $request->brand,
   'productName' => $request->name,
   'productType' => $request->category,
