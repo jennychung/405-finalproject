@@ -21,6 +21,6 @@ public function signup(){
     $user->save();
 
     Auth::login($user);
-    return redirect('/');
+    return redirect('/day');
 }
 }

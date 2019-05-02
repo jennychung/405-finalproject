@@ -98,6 +98,8 @@ class ExploreController extends Controller
 
   }
 
+
+
 // public function __construct()
 // {
 //   $this->middleware(['auth']);
@@ -129,5 +131,7 @@ public function show(Product $product)
     $request->user()->favouriteProducts()->detach($product);
     return back();
   }
+
+
 
 }

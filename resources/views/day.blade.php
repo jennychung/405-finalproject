@@ -4,10 +4,7 @@
 @section('title', 'My Day')
 
 @section('main')
-
-
-
-@extends('fav')
+<!-- @extends('fav')>
 
 <div class="pageTitle"> My Day </div>
 <div style=" display: inline-block;">

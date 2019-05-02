@@ -24,8 +24,8 @@
   <a href="/day"  class="logo" style="display: block; margin-left: auto; margin-right: auto;">
     <img src="{{ asset('/images/moongloss.svg') }}" height="36"></a>
 
-
-  <li style="float:right"> <a class="nav-link"  href="/skin">Profile</a>  </li>
+  <li> <a class="nav-link" href="/explore" style="color:transparent;"> Enter </a>  </li>
+  <!-- <li style="float:right"> <a class="nav-link"  href="/skin">Profile</a>  </li> -->
   <li style="float:right"> <a class="nav-link"  href="/logout">Log Out</a> </li>
   <!-- <li style="float:right"> <a class="nav-link"  href="/login">Log In</a> </li> -->
 

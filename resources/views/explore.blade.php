@@ -4,26 +4,34 @@
 
 @section('main')
 
+@php
+$msearch = '';
+
+if(isset($search)) {
+  $msearch = $search;
+
+}
+
+@endphp
 <div class="pageTitle"> Explore </div>
 
 <div class= "searchbody">
 
-
-
-<!-- index is from controller @index -->
 <form  method="get">
           @csrf
           <div class="subheadPink"> Search </div>
-          <input type="text" placeholder="Keywords" class="col" name="search" value="{{$search}}">
+          <input type="text" placeholder="Keywords" class="col" name="search" value="{{$msearch}}">
 <div class="filterGroup">
 <div class="filter col">
   <div class="subheadGrey" style="padding-bottom: 10px;"> Categories </div>
   <select size="5" name="category">
 
     <option value="all" selected >All</option>
+    @if(isset($categories))
     @foreach($categories->unique('productTypeSimple') as $category)
-    <option value="{{$category->productTypeSimple}}">{{$category->productTypeSimple}}</option>
-      @endforeach
+      <option value="{{$category->productTypeSimple}}">{{$category->productTypeSimple}}</option>
+    @endforeach
+  @endif
   </select>
 </div>
 
@@ -31,9 +39,11 @@
   <div class="subheadGrey" style="padding-bottom: 10px;"> Brands </div>
   <select size="5" name="brand">
     <option value="all" selected >All</option>
+    @if(isset($categories))
       @foreach($brand->unique('brand') as $brand)
-    <option value="{{$brand->brand}}">{{$brand->brand}}</option>
-          @endforeach
+        <option value="{{$brand->brand}}">{{$brand->brand}}</option>
+      @endforeach
+    @endif
   </select>
 </div>
 
@@ -45,10 +55,10 @@
 </form>
 
 
-<a href="/playlists/new" class="subheadGrey">Add a Product </a>
+<a href="/explore/new" class="subheadGrey">Add a Product </a>
 
 
-
+@if(isset($products))
 @forelse($products->chunk(3) as $chunk)
 
 <div class="cardGroup">
@@ -89,7 +99,10 @@
 @empty
         <div> No products found </div>
 @endforelse
+
 {{ $products->links() }}
+
+@endif
 </div>
 @endsection
 </body>
