@@ -4,20 +4,12 @@
 @section('title', 'My Day')
 
 @section('main')
-<!-- @extends('fav')>
+@extends('fav')
 
 <div class="pageTitle"> My Day </div>
 <div style=" display: inline-block;">
   <p id="timeBased"> Today – <i> a.m </i> </p>
 </div>
-
-
-<!-- <div style="float: right; display: inline-block; margin-top:0.2rem;">
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>
-</div> -->
 
 
 @forelse($products->chunk(3) as $chunk)
