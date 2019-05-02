@@ -26,7 +26,7 @@
 <button type="submit" value="Login" style="margin-top: 20px;" class="col col-lg-2">Submit</button>
 </form>
 
-<p class="subtext">Don't have an account? <a href="/quiz">Take the quiz!</a></p>
+<p class="subtext">Don't have an account? <a href="/quiz">Sign Up!</a></p>
 
 </div>
 </div>

@@ -262,7 +262,7 @@ input:checked + .slider:before {
 .explore input[type=text] {
   padding: 8px;
   padding-left: 20px;
-  width: 80%;
+  width: 93%;
   border: none;
   margin-top: 8px;
   margin-right: 16px;
@@ -305,7 +305,7 @@ input:checked + .slider:before {
   text-align: left;
   margin: 0;
   padding: 6px;
-  width: 100px;
+  width: 200px;
   background-color: #92B45A;
   color: white;
   border: none;
@@ -445,6 +445,15 @@ text-align: center;
 margin-top: 4rem;
 }
 
+.productBody .pageTitle {
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #151515;
+  padding-bottom: 2rem;
+  line-height: 4.5rem;
+}
+
 .productBody .productImage {
   width: 30%;
   margin-left: auto;
@@ -453,10 +462,10 @@ margin-top: 4rem;
   height: 30rem;
   position: absolute;
   /* position: relative; */
-  z-index: -100;
+  z-index: -500;
   background-position: center;
   background-size: cover;
-  margin-top: 2rem;
+  margin-top: 8rem;
   left: 35%;
   right: 35%;
 }
@@ -490,7 +499,7 @@ margin-top: 4rem;
   margin-right: auto;
   display: block;
   position: relative;
-  margin-top: 23rem;
+  margin-top: 28rem;
 }
 
 .productBody .bodyText{
@@ -500,7 +509,7 @@ margin-top: 4rem;
 
 .productBody .table tbody tr td{
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1rem;
     color: #535353;
     padding-top: 10px;
 }
@@ -516,6 +525,11 @@ margin-top: 4rem;
   text-align: right;
 }
 
+.productBody i {
+  color: #E8CDC4;
+  margin-bottom: 0rem;
+  /* background-color: white; */
+}
 
 /* LOGIN */
 

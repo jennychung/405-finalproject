@@ -2,28 +2,38 @@
 
 
 Route::get('/', function () {
-    return view('day');
+    return view('/explore');
 });
 
+Route::middleware(['authenticated'])->group(function() {
 Route::get('/day', 'DayController@index');
 
-Route::get('/explore', 'ExploreController@index');
-Route::get('/product/{id}', 'ExploreController@product');
-// Route::get('/product/{id}/edit', ['as'=>'genres', 'uses'=>'ProductController@show']);
-//
-// Route::get('/products', 'ExploreController@index');
-// Route::get('/products/new', 'ExploreController@create');
-// Route::post('/products', 'ExploreController@store');
-
-Route::get('/login', 'LoginController@index');
-Route::post('/login', 'LoginController@login');
-Route::get('/logout', 'LoginController@logout');
-
-Route::get('/quiz', 'QuizController@index');
-Route::post('/quiz', 'QuizController@signup');
 Route::get('/skin', 'ProfileController@index');
 Route::post('/skin', 'ProfileController@fileUpload');
 
+Route::get('/explore', 'ExploreController@index');
+Route::get('/product/{id}', 'ExploreController@product');
+});
+// Route::post('/products/{product}/favourites', 'ExploreController@store')->name('product.fav.store');
+// Route::delete('/products/{product}/favourites', 'ExploreController@destroy')->name('product.fav.destroy');
+
+
+Route::get('/products/favourites', 'ExploreController@productindex')->name('product.fav');
+Route::get('/products/{product}', 'ExploreController@show')->name('product.show');
+Route::post('/products/{product}/favourites', 'ExploreController@store')->name('product.fav.store');
+Route::delete('/products/{product}/favourites', 'ExploreController@destroy')->name('product.fav.destroy');
+
+
+Route::get('/login', 'LogInController@index');
+Route::post('/login', 'LogInController@login');
+Route::get('/logout', 'LogInController@logout');
+
+Route::get('/quiz', 'QuizController@index');
+Route::post('/quiz', 'QuizController@signup');
+
+
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

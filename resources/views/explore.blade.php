@@ -40,9 +40,14 @@
 
 </div>
 
-<button type="submit" class="col col-lg-2"> Submit </button>
+<button type="submit" class="col"> Submit </button>
 
 </form>
+
+
+<a href="/playlists/new" class="subheadGrey">Add a Product </a>
+
+
 
 @forelse($products->chunk(3) as $chunk)
 

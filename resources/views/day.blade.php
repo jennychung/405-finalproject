@@ -6,19 +6,66 @@
 @section('main')
 
 
+
+@extends('fav')
+
 <div class="pageTitle"> My Day </div>
 <div style=" display: inline-block;">
   <p id="timeBased"> Today – <i> a.m </i> </p>
 </div>
 
-<div style="float: right; display: inline-block; margin-top:0.2rem;">
+
+<!-- <div style="float: right; display: inline-block; margin-top:0.2rem;">
 <label class="switch">
   <input type="checkbox">
   <span class="slider round"></span>
 </label>
-</div>
+</div> -->
+
+
+@forelse($products->chunk(3) as $chunk)
 
 <div class="cardGroup">
+  @foreach($chunk as $product)
+  <a href="/product/{{$product->productId}}">
+<div class="card exploreCard col-md">
+  <div class="image" style="background-image: url({{$product->imageLink}})"></div>
+
+  <div class="content">
+    <div class="brand">
+      <!-- Krave Beauty  -->
+      {{$product->brand}}
+      <!-- {{$product->imageLink}} -->
+    </div>
+    <div class="name">
+      <!-- Kale-Lalu-yAHA -->
+          {{$product->productName}}
+    </div>
+
+    <div class="description">
+      <div class="category">
+        <!-- Toner -->
+          {{$product->productType}}
+      </div>
+      <!-- <div class="tags">
+        <div class="tag-style"> Paraben Free </div>
+        <div class="tag-style"> Vegan </div>
+      </div> -->
+    </div>
+  </div>
+
+</div>
+</a>
+  @endforeach
+
+</div>
+
+@empty
+        <div> No products found </div>
+@endforelse
+
+
+<!-- <div class="cardGroup">
 <div class="card">
   <div class="image" style="background-image: url('/images/kale.jpg')"></div>
   <div class="content">
@@ -84,7 +131,7 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 <div class= "cardGroup">
   <div id= "tip1">

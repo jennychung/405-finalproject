@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\{Product, User};
 use DB;
+use Validator;
+
 
 class ExploreController extends Controller
 {
@@ -93,6 +96,38 @@ class ExploreController extends Controller
       'brand' => $brand
   ]);
 
+  }
+
+// public function __construct()
+// {
+//   $this->middleware(['auth']);
+// }
+public function productindex(Request $request)
+{
+  $products = $request->user()->favouriteProducts()->get();
+  return view('fav', compact('products'));
+}
+public function show(Product $product)
+{
+  return view('show', compact('product'));
+}
+  // public function store(Request $request, Product $product)
+  // {
+  //   $request->user()->favouriteProducts()->syncWithoutDetaching([$product->id]);
+  //   return back();
+  // }
+
+  public function store(Request $request)
+  {
+    $request->user()->favouriteProducts()->syncWithoutDetaching([$request->product]);
+    return back();
+  }
+
+
+  public function destroy(Request $request, Product $product)
+  {
+    $request->user()->favouriteProducts()->detach($product);
+    return back();
   }
 
 }

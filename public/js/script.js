@@ -1,8 +1,8 @@
 function timeBased() {
   var time = new Date().getHours();
   var greeting = "";
-  if (time < 20) {
-    greeting = "Today –  a.m";
+  if (time < 16 && time > 4) {
+    greeting = "Today –  a.m ";
   } else {
     greeting = "Tonight –  p.m";
   }

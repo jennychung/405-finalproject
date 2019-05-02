@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function favouriteProducts()
+      {
+          return $this->morphedByMany(Product::class, 'routines')
+                      ->withPivot(['created_at'])
+                      ->orderBy('pivot_created_at', 'desc');
+      }
+
+
 }

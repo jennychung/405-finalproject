@@ -16,19 +16,31 @@
 <div style="margin-bottom: 30px;">
 <nav id="animateNav" class="nav" >
 
-  <li> <a class="nav-link" href="/quiz"> <i> Take a Quiz </i> </a> </li>
+  @if (Auth::check())
+  <!-- <li> <a class="nav-link" href="/quiz"> <i> Sign Up </i> </a> </li> -->
   <li> <a class="nav-link" href="/day"> My Day </a>  </li>
-    <li> <a class="nav-link" href="/day" style="color:transparent;"> Enter </a>  </li>
+  <li> <a class="nav-link" href="/explore">Explore</a>  </li>
 
   <a href="/day"  class="logo" style="display: block; margin-left: auto; margin-right: auto;">
     <img src="{{ asset('/images/moongloss.svg') }}" height="36"></a>
 
-  <li style="float:right"> <a class="nav-link" href="/explore">Explore</a>  </li>
+
   <li style="float:right"> <a class="nav-link"  href="/skin">Profile</a>  </li>
-  <li style="float:right"> <a class="nav-link"  href="/login">Log In</a> </li>
+  <li style="float:right"> <a class="nav-link"  href="/logout">Log Out</a> </li>
+  <!-- <li style="float:right"> <a class="nav-link"  href="/login">Log In</a> </li> -->
 
   <a href="javascript:void(0);" class="icon" onclick="navigation()">
     <i class="fa fa-bars"></i> </a>
+      @else
+        <li> <a class="nav-link" href="/explore">Explore</a>  </li>
+
+          <li> <a class="nav-link" href="/explore" style="color:transparent;"> Enter </a>  </li>
+      <a href="/explore"  class="logo" style="display: block; margin-left: auto; margin-right: auto;">
+        <img src="{{ asset('/images/moongloss.svg') }}" height="36"></a>
+        <li style="float:right"> <a class="nav-link" href="/quiz"> Sign Up</a> </li>
+  <li style="float:right"> <a class="nav-link"  href="/login">Log In</a> </li>
+
+      @endif
 </nav>
 </div>
 
