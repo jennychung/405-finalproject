@@ -9,7 +9,7 @@ class DayController extends Controller
 
   public function index(Request $request)
   {
-  	$products = $request->user()->favouriteProducts()->get();
+  	$products = $request->user()->favoriteProducts()->get();
 
   	return view('day', compact('products'));
 

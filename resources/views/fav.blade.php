@@ -10,7 +10,7 @@
                             <span class="pull-left">Added {{ $product->pivot->created_at->diffforHumans() }}</span>
 
                             <span class="pull-right">
-                                <a href="#" onclick="event.preventDefault(); document.getElementById('product-fav-destroy-{{ $product->id }}').submit();">Remove from Favourites</a>
+                                <a href="#" onclick="event.preventDefault(); document.getElementById('product-fav-destroy-{{ $product->id }}').submit();">Remove from favorites</a>
                             </span>
 
                             <form action="{{ route('product.fav.destroy', $product) }}" method="POST" id="product-fav-destroy-{{ $product->id }}">

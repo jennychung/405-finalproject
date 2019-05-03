@@ -5,7 +5,7 @@
 
 @php
 $newId = $product->productId;
-$favoriteCheck = App\Product::favouritedBy(Auth::user());
+$favoriteCheck = App\Product::favoritedBy(Auth::user());
 
 @endphp
 

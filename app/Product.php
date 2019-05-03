@@ -14,15 +14,15 @@ class Product extends Model
 
   //protected $fillable = ['user_id'];
 
-      public function favourites()
+      public function favorites()
       {
         return $this->morphToMany(User::class, 'routines');
         //return $this->morphToMany();
       }
 
-      public static function favouritedBy(User $user)
+      public static function favoritedBy(User $user)
       {
         $_this = new self;
-        return $_this->favourites->contains($user);
+        return $_this->favorites->contains($user);
       }
 }

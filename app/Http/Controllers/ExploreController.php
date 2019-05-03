@@ -106,7 +106,7 @@ class ExploreController extends Controller
 // }
 public function productindex(Request $request)
 {
-  $products = $request->user()->favouriteProducts()->get();
+  $products = $request->user()->favoriteProducts()->get();
   return view('fav', compact('products'));
 }
 public function show(Product $product)
@@ -115,20 +115,20 @@ public function show(Product $product)
 }
   // public function store(Request $request, Product $product)
   // {
-  //   $request->user()->favouriteProducts()->syncWithoutDetaching([$product->id]);
+  //   $request->user()->favoriteProducts()->syncWithoutDetaching([$product->id]);
   //   return back();
   // }
 
   public function store(Request $request)
   {
-    $request->user()->favouriteProducts()->syncWithoutDetaching([$request->product]);
+    $request->user()->favoriteProducts()->syncWithoutDetaching([$request->product]);
     return back();
   }
 
 
   public function destroy(Request $request, Product $product)
   {
-    $request->user()->favouriteProducts()->detach($product);
+    $request->user()->favoriteProducts()->detach($product);
     return back();
   }
 

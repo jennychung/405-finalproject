@@ -38,7 +38,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function favouriteProducts()
+    public function favoriteProducts()
       {
           return $this->morphedByMany(Product::class, 'routines')
                       ->withPivot(['created_at'])
